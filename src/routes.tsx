@@ -1,5 +1,13 @@
-import React from "react";
+import { BrowserRouter, Routes } from "react-router-dom"
 
 export default function AppRoutes() {
-  return <div>AppRoutes</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={}>
+          
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
