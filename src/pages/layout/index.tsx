@@ -1,7 +1,16 @@
+import { Outlet } from "react-router-dom";
+import Nav from "./nav";
+import Footer from "./footer";
 
 
 export default function AppLayout() {
   return (
-    <div>AppLayout</div>
+    <>
+      <Nav />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   )
 }

@@ -1,5 +1,4 @@
-import { Link, router, usePage } from "@inertiajs/react"
-import { IconAppWindow, IconLogout, IconMessageCircleUser, IconUserScan } from "@tabler/icons-react"
+import { IconAppWindow, IconLogout, IconUserScan } from "@tabler/icons-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Typography, TypographySm, TypographyXs } from "./typography"
 import { cn } from "@/shared/lib/utils"
@@ -9,6 +8,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu"
+import { Link } from "react-router-dom"
 
 export function UserButton({
   className,
@@ -19,7 +19,6 @@ export function UserButton({
   showRole?: boolean
   avatarClassName?: string
   }) {
-    const { auth: {user} } = usePage().props
 
   return (
     <DropdownMenu>
@@ -36,7 +35,7 @@ export function UserButton({
           </Avatar>
           <div className="text-left">
             <TypographySm className="block font-semibold">
-              { user?.firstname } {user?.lastname}
+              Nathaniel
             </TypographySm>
 
             {showRole && <TypographyXs>Web developer</TypographyXs>}
@@ -46,19 +45,19 @@ export function UserButton({
 
       <DropdownMenuContent className="w-full">
         <DropdownMenuItem>
-          <Link href="/" className="flex space-x-2 items-center">
+          <Link to="/" className="flex space-x-2 items-center">
             <IconAppWindow />
             <Typography>Frontend</Typography>
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/" className="flex space-x-2 items-center">
+          <Link to="/" className="flex space-x-2 items-center">
             <IconUserScan />
             <Typography>Profile</Typography>
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem className="flex space-x-2 items-center" onClick={() => router.post(route("logout"))}>
-          {/* <Link href={route('logout')}> */}
+        <DropdownMenuItem className="flex space-x-2 items-center">
+          {/* <Link to={route('logout')}> */}
             <IconLogout size={18} />
             <Typography>Logout</Typography>
           {/* </Link> */}

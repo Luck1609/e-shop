@@ -10,3 +10,8 @@
     --radius: 0.5rem
   }
 }
+
+
+body {
+  @apply text-color font-['Roboto']
+}
