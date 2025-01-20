@@ -20,6 +20,7 @@ export default function AppRoutes() {
           </Route>
 
           <Route path="cart" element={<CartPage />} />
+          <Route path="checkout" element={<CartPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

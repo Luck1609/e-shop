@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useDispatch } from "@/shared/feature/hooks";
 import { toggleDrawer } from "@/shared/feature/reducers/misc";
 import { cn } from "@/shared/lib/utils";
-import { IconHeart, IconMenu3, IconSearch, IconShoppingCart } from "@tabler/icons-react";
+import { IconHeart, IconMenu3, IconSearch, IconShoppingCart, IconUser } from "@tabler/icons-react";
 import { useLocation } from "react-router-dom";
 
 
@@ -51,9 +51,18 @@ export default function Nav() {
                 <IconHeart className="w-5 h-5" />
               </Button>
             </li>
+            {
+              pathname !== "/cart" && (
+                <li className="">
+                  <Button size="icon" variant="ghost" onClick={toggleShoppingCart}>
+                    <CartIcon className="w-5 h-5 fill-color" />
+                  </Button>
+                </li>
+              )
+            }
             <li className="">
-              <Button size="icon" variant="ghost" onClick={toggleShoppingCart}>
-                <CartIcon className="w-5 h-5 fill-color" />
+              <Button size="icon" variant="ghost">
+                <IconUser className="w-5 h-5" />
               </Button>
             </li>
             <li className="block lg:hidden">
