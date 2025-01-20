@@ -10,7 +10,7 @@ type Props = { name: string, label: ReactNode, className?: string }
 
 export default function Rating({ name, label, className }: Props) {
   const [hover, setHover] = useState(0)
-  const { control, setValue, getValues } = useFormContext()
+  const { control, setValue } = useFormContext()
 
   const handleRating = (value: number) => () => setValue(name, value)
   const handleMouseEnter = (value: number) => setHover(value)
@@ -77,7 +77,7 @@ export function Rate({ rate = 0, className }: {rate: number, className?: string}
           return (
             <IconStar
               key={id.toString()}
-              className={cn("h-5 w-5 cursor-pointer", value <= (hover || rating) ? "fill-amber-500 stroke-amber-500" : "", className)}
+              className={cn("h-5 w-5 cursor-pointer fill-slate-300 stroke-slate-300", value <= (hover || rating) ? "fill-amber-500 stroke-amber-500" : "", className)}
               onMouseEnter={() => handleMouseEnter(value)}
               onMouseLeave={handleMouseLeave}
               onClick={() => handleRating(value)}

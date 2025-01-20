@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="bg-dark">
-      <Container className="grid lg:grid-cols-4 gap-5 text-white py-10">
+      <Container className="grid grid-cols-2 lg:grid-cols-4 gap-5 text-white py-10 space-y-8">
         <article className="">
           <Logo className="text-left text-white mb-3 block" />
           <ul className="space-y-4">
@@ -24,7 +24,7 @@ export default function Footer() {
           </ul>
         </article>
 
-        <article className="ali-center">
+        <article className="pl-10 lg:pl-0">
           <TypographyH6 className="text-left text-white mb-3 block">Quick links</TypographyH6>
           <ul className="space-y-4">
             <li className="">
@@ -50,7 +50,7 @@ export default function Footer() {
           </ul>
         </article>
 
-        <article className="ali-center">
+        <article className="">
           <TypographyH6 className="text-left text-white mb-3 block">My account</TypographyH6>
           <ul className="space-y-4">
             <li className="">
@@ -71,7 +71,7 @@ export default function Footer() {
           </ul>
         </article>
 
-        <article className="ali-center">
+        <article className="pl-10 lg:pl-0">
           <TypographyH6 className="text-left text-white mb-3 block">Help center</TypographyH6>
           <ul className="space-y-4">
             <li className="">

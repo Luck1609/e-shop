@@ -23,8 +23,8 @@ export default function Subscription() {
 
   return (
     <div className="py-16">
-      <Container className="p-10 rounded-lg- bg-dark text-slate-100">
-        <div className="w-10/12 grid lg:grid-cols-2 gap-10 mx-auto h-80 items-center">
+      <Container className="rounded-lg bg-dark text-default">
+        <div className="w-full lg:w-10/12 grid lg:grid-cols-2 gap-10 p-5 lg:p-10 mx-auto lg:h-80 items-center">
           <article className="">
             <TypographyLead className="leading-loose">We always stay with our clients and respect their business. We deliver 100% and provide instant response to help them succeed in constantly changing and challenging business world.</TypographyLead>
           </article>
@@ -32,9 +32,9 @@ export default function Subscription() {
           <Form {...form}>
             <form className="">
               <TypographyLead>Subscribe to our newsletter</TypographyLead>
-              <div className="flex items-center">
-                <Input name="email" placeholder="Email address" />
-                <Button>Subscribe</Button>
+              <div className="flex items-end space-x-1">
+                <Input name="email" placeholder="Email address" className="h-auto p-4 border-none bg-slate-800" />
+                <Button variant="default" className="bg-slate-700 text-default h-auto p-4">Subscribe</Button>
               </div>
             </form>
           </Form>

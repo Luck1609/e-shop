@@ -3,6 +3,7 @@ import ProductCollection from "./collection";
 import Featured from "./featured";
 import Hero from "./hero";
 import Popular from "./popular";
+import Testimony from "./testimony";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ProductCollection />
       <Featured />
       <Popular />
+      <Testimony />
       <Subscription />
     </>
   );

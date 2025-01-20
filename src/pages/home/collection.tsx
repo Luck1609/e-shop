@@ -10,7 +10,7 @@ export default function ProductCollection() {
   return (
     
     <Container className="grid lg:grid-cols-3 gap-5 py-14">
-      <div className="w-2/5 lg:col-span-3">
+      <div className="lg:w-2/5 lg:col-span-3">
         <TypographyH3>Our Collections</TypographyH3>
         <TypographySm className="text-slate-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit asperiores magnam nesciunt repellendus minima earum.</TypographySm>
       </div>
