@@ -4,17 +4,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { ChildProps } from "@/types"
 import { Typography } from "./typography"
 
 export function TooltipButton({
   children,
   label,
   className
-}: ChildProps & {
-  label: string
-  className?: string
-}) {
+}: Children<{label: string, className?: string }>) {
   return (
     <TooltipProvider>
       <Tooltip>

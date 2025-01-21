@@ -86,7 +86,7 @@ export function TypographyH6({ children, className }: IProps) {
 
 export function TypographySm({ children, className }: IProps) {
   return (
-    <small className={cn("text-sm font-medium leading-none", className)}>
+    <small className={cn("text-sm leading-none", className)}>
       {children}
     </small>
   )
@@ -94,7 +94,7 @@ export function TypographySm({ children, className }: IProps) {
 
 export function TypographyXs({ children, className }: IProps) {
   return (
-    <small className={cn("text-xs font-medium leading-none", className)}>
+    <small className={cn("text-xs leading-none", className)}>
       {children}
     </small>
   )

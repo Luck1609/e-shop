@@ -6,6 +6,9 @@ import ProductDetailsPage from "./pages/products/details";
 import CartPage from "./pages/cart";
 import Login from "./pages/auth/login";
 import AuthLayout from "./pages/auth/layout";
+import ForgotPassword from "./pages/auth/forgot-password";
+import ResetPassword from "./pages/auth/reset-password";
+import Register from "./pages/auth/register";
 
 export default function AppRoutes() {
   return (
@@ -13,6 +16,9 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="login" element={<Login />} />
+          <Route path="forgot-password" element={<ForgotPassword />} />
+          <Route path="reset-password" element={<ResetPassword />} />
+          <Route path="register" element={<Register />} />
         </Route>
         
         <Route element={<AppLayout />}>
