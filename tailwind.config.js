@@ -14,6 +14,9 @@ export default {
 				default: "#CBD5E1",
 				secondary: "#FF4300",
 				dark: "#131920",
+			},
+			backgroundImage: {
+				background: "url('/svg/background.svg')"
 			}
   	}
   },

@@ -1,11 +1,12 @@
 import { CartIcon } from "@/assets/icons";
-import { Container, Logo, NavLink } from "@/components/custom/misc";
+import { Container, Logo, NavLink, Typography } from "@/components/custom/misc";
 import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useDispatch } from "@/shared/feature/hooks";
 import { toggleDrawer } from "@/shared/feature/reducers/misc";
 import { cn } from "@/shared/lib/utils";
-import { IconHeart, IconMenu3, IconSearch, IconShoppingCart, IconUser } from "@tabler/icons-react";
-import { useLocation } from "react-router-dom";
+import { IconHeart, IconLogin, IconMenu3, IconSearch, IconUser, IconUserEdit } from "@tabler/icons-react";
+import { Link, useLocation } from "react-router-dom";
 
 
 export default function Nav() {
@@ -61,9 +62,28 @@ export default function Nav() {
               )
             }
             <li className="">
-              <Button size="icon" variant="ghost">
-                <IconUser className="w-5 h-5" />
-              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Button size="icon" variant="ghost">
+                    <IconUser className="w-5 h-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent>
+                  <DropdownMenuItem>
+                    <Link to="/login" className="flex items-center space-x-1">
+                      <IconLogin />
+                      <Typography>Login</Typography>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link to="/register" className="flex items-center space-x-1">
+                      <IconUserEdit />
+                      <Typography>Register</Typography>
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </li>
             <li className="block lg:hidden">
               <Button size="icon" variant="ghost">

@@ -15,7 +15,7 @@ export default function CartPage() {
 
           <div className="lg:col-span-5 divide-y">
             <div className="grid grid-cols-6 col-span-3 py-3 lg:px-2">
-              <div className="lg:col-span-3 pl-5">
+              <div className="md:col-span-3 pl-5">
                 <TypographyH5>Products</TypographyH5>
               </div>
                 <TypographyH5 className="w-full text-center">Price</TypographyH5>

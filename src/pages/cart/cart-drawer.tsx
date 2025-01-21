@@ -46,17 +46,17 @@ export default function CartDrawer() {
 
 export const CartCard = () => {
   return (
-    <div className="w-full grid grid-cols-8 lg:grid-cols-6 items-center lg:px-2 lg:p-1 rounded">
-      <div className="w-full h-full flex items-center gap-2 col-span-3 lg:col-span-1">
-        <Button size="icon" variant="ghost" className="hover:text-red-500 h-7 lg:w-10 lg:h-10">
-          <IconTrash className="h-4 w-4 lg:w-5 lg:h-5" />
+    <div className="w-full grid grid-cols-8 md:grid-cols-6 items-center md:px-2 md:p-1 rounded">
+      <div className="w-full h-full flex items-center gap-2 col-span-3 md:col-span-1">
+        <Button size="icon" variant="ghost" className="hover:text-red-500 h-7 md:w-10 md:h-10">
+          <IconTrash className="h-4 w-4 md:w-5 md:h-5" />
         </Button>
 
-        <div className="bg-slate-200 rounded w-full lg:w-9/12 h-28"></div>
+        <div className="bg-slate-200 rounded w-full md:w-9/12 h-28"></div>
       </div>
 
-      <div className="col-span-5 grid lg:grid-cols-5">
-        <div className="lg:space-y-1 lg:col-span-2 pl-3 lg:pl-5">
+      <div className="col-span-5 grid md:grid-cols-5">
+        <div className="md:space-y-1 md:col-span-2 pl-3 md:pl-5">
           <Typography>Product name here</Typography>
 
           <TypographySm className="block mb-2 font-normal">
@@ -65,13 +65,13 @@ export const CartCard = () => {
           </TypographySm>
         </div>
 
-        <Typography className="self-center block lg:text-center pl-3 lg:pl-0">$27</Typography>
+        <Typography className="self-center block md:text-center pl-3 md:pl-0">$27</Typography>
 
-        <div className="w-full flex lg:justify-center pl-3 lg:pl-0">
+        <div className="w-full flex md:justify-center pl-3 md:pl-0">
           <Counter className="w-24 rounded overflow-hidden border" />
         </div>
 
-        <Typography className="hidden self-center lg:block lg:text-center pl-3 lg:pl-0">$27</Typography>
+        <Typography className="hidden self-center md:block md:text-center pl-3 md:pl-0">$27</Typography>
       </div>
     </div>
   )

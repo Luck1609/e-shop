@@ -15,3 +15,7 @@
 body {
   @apply text-color font-['Roboto']
 }
+
+.input {
+  @apply h-12;
+}

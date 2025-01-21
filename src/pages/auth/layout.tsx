@@ -1,11 +1,11 @@
+import { Outlet } from "react-router-dom";
 
 
-export default function AuthLayout({ children, image }: Children<{ image: string }>) {
+export default function AuthLayout() {
   return (
-    <div className="flex">
-      <section className="w-full"></section>
-      <section className="w-full">
-        { children }
+    <div className="flex bg-slate-50">
+      <section className="w-full h-[100dvh] flex items-center justify-center">
+        <Outlet />
       </section>
     </div>
   )

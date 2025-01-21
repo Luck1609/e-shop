@@ -4,11 +4,17 @@ import Home from "./pages/home";
 import ProductListing from "./pages/products";
 import ProductDetailsPage from "./pages/products/details";
 import CartPage from "./pages/cart";
+import Login from "./pages/auth/login";
+import AuthLayout from "./pages/auth/layout";
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<Login />} />
+        </Route>
+        
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="products">
