@@ -4,13 +4,11 @@ import "./index.css";
 import AppRoutes from "./routes";
 import { Provider } from "react-redux";
 import store from "./shared/feature/store";
-import { Drawer } from "./components/custom/misc";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <AppRoutes />
-      <Drawer />
     </Provider>
   </StrictMode>,
 );

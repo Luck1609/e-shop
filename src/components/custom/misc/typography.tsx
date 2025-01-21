@@ -100,7 +100,7 @@ export function TypographyXs({ children, className }: IProps) {
   )
 }
 export function Typography({ children, className }: IProps) {
-  return <p className={cn("leading-7 text-sm lg:text-base", className)}>{children}</p>
+  return <p className={cn("leading-7 text-base", className)}>{children}</p>
 }
 
 export function TypographyMd({ children, className }: IProps) {

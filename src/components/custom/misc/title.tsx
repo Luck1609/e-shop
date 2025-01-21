@@ -42,10 +42,10 @@ export default function Title({ className, title }: { className?: string, title:
   console.log("Breadcrumb links", links)
 
   return (
-    <section className={cn("py-20", className)}>
+    <section className={cn("py-5 lg:py-20", className)}>
       <TypographyH3>{title ?? "Title here"}</TypographyH3>
 
-      <Breadcrumb className="py-3">
+      <Breadcrumb className="py-1 lg:py-3">
         <BreadcrumbList>
           {
           }

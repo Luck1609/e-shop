@@ -7,10 +7,8 @@ import {
 import { useDispatch, useSelector } from "@/shared/feature/hooks"
 import { toggleDrawer } from "@/shared/feature/reducers/misc"
 import * as drawerItems from "@/shared/feature/widgets"
-import { ReactNode } from "react"
 
 type Props = {
-  trigger: string | ReactNode
   component: () => JSX.Element
 }
 
@@ -20,15 +18,14 @@ export function Drawer() {
 
   const { component: Component }: Props = drawer?.component
     ? drawerItems[drawer.component as keyof typeof drawerItems] : {
-      component: () => <></>,
-      trigger: ""
+      component: () => <></>
     }
   
   const close = () => dispatch(toggleDrawer())
 
   return (
     <Sheet open={drawer !== null} onOpenChange={close}>
-      <SheetContent>
+      <SheetContent className="p-4">
         <SheetHeader>
           <SheetTitle>{ drawer?.title }</SheetTitle>
         </SheetHeader>
