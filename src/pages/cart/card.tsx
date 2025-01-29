@@ -5,24 +5,6 @@ import { IconChevronDown, IconChevronUp } from "@tabler/icons-react";
 import { useState } from "react";
 
 
-// export default function CartCard({ className }: {className?: string}) {
-//   return (
-//     <div className={cn("", className)}>
-//       <div className="bg-slate-200 h-24 w-16"></div>
-
-//       <div className="">
-//         <div className="">
-//           <TypographyH6>Product name</TypographyH6>
-//           <TypographySm>Color: Teal</TypographySm>
-//         </div>
-
-//         <Typography>$92</Typography>
-
-//       </div>
-//     </div>
-//   )
-// }
-
 
 export const Counter = ({ itemQuantity = 1, className }: { itemQuantity?: number, className?: string }) => {
   const [quantity, setQuantity] = useState(itemQuantity)

@@ -39,6 +39,9 @@ export default function Nav() {
             <li className="">
               <NavLink to="/products">Products</NavLink>
             </li>
+            <li className="">
+              <NavLink to="/track-package">Track Package</NavLink>
+            </li>
           </ul>
 
           <ul className="flex space-x-1">

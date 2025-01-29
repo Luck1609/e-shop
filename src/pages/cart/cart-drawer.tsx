@@ -1,10 +1,11 @@
-import { Typography, TypographyLead, TypographySm, TypographyXs } from "@/components/custom/misc";
+import { Typography, TypographyLead, TypographySm } from "@/components/custom/misc";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { SheetClose, SheetFooter } from "@/components/ui/sheet";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Counter } from "./card";
 import { Button } from "@/components/ui/button";
 import { IconTrash } from "@tabler/icons-react";
+import { cn } from "@/shared/lib/utils";
 
 
 export default function CartDrawer() {
@@ -17,7 +18,7 @@ export default function CartDrawer() {
       <ScrollArea className="h-[calc(100dvh-152px)] pt-4">
         <div className="space-y-5">
           {
-            Array.from(Array(10).keys()).map((index: number) => (<CartCard key={index.toString()} />))
+            Array.from(Array(10).keys()).map((index: number) => (<CartCard key={index.toString()} className="drawer-cart-item" />))
           }
           
         </div>
@@ -29,12 +30,12 @@ export default function CartDrawer() {
           <TypographyLead className="font-medium">$230.00</TypographyLead>
         </div>
 
-        <SheetFooter className="space-x-2">
-          <SheetClose className="w-full">
+        <SheetFooter className="flex flex-row space-x-2 lg:space-x-2">
+          <SheetClose className="w-2/4 lg:w-full">
             <Button onClick={goto("/checkout")} className="w-full h-12 block p-3 bg-secondary text-white rounded-md hover:bg-secondary hover:bg-opacity-85">Checkout</Button>
           </SheetClose>
           
-          <SheetClose className="w-full">
+          <SheetClose className="w-2/4 lg:w-full">
             <Button onClick={goto("/cart")} variant="ghost" className="w-full h-12 block p-3 border border-secondary text-secondary rounded-md hover:text-secondary">View cart</Button>
           </SheetClose>
         </SheetFooter>
@@ -44,9 +45,9 @@ export default function CartDrawer() {
 }
 
 
-export const CartCard = () => {
+export const CartCard = ({ className }: {className?: string}) => {
   return (
-    <div className="w-full grid grid-cols-8 md:grid-cols-6 items-center md:px-2 md:p-1 rounded">
+    <div className={cn("w-full grid grid-cols-8 md:grid-cols-6 items-center md:px-2 md:p-1 rounded", className)}>
       <div className="w-full h-full flex items-center gap-2 col-span-3 md:col-span-1">
         <Button size="icon" variant="ghost" className="hover:text-red-500 h-7 md:w-10 md:h-10">
           <IconTrash className="h-4 w-4 md:w-5 md:h-5" />

@@ -8,7 +8,7 @@ import {
 import { useFormContext } from "react-hook-form";
 import { FormField, FormLabel, FormMessage } from "@/components/ui/form";
 import { cn } from "@/shared/lib/utils";
-import { SelectOptions } from "@/types";
+import { ReactNode } from "react";
 
 
 
@@ -20,7 +20,7 @@ export function Select({
   disabled
 }: {
   name: string;
-  options: SelectOptions[];
+  options: {label: ReactNode, value: string}[];
   label: string;
   placeholder?: string
   disabled?: boolean
@@ -35,7 +35,7 @@ export function Select({
         <div className={cn("form-field", error ? 'error' : '')}>
           <FormLabel className="mb-1 inline-block">{label}</FormLabel>
           <SelectField onValueChange={onChange} value={value} disabled={disabled}>
-            <SelectTrigger className="h-auto !py-4">
+            <SelectTrigger className="h-auto !py-3 h-12">
               <SelectValue placeholder={placeholder} className="" />
             </SelectTrigger>
 

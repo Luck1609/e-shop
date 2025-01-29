@@ -9,6 +9,8 @@ import AuthLayout from "./pages/auth/layout";
 import ForgotPassword from "./pages/auth/forgot-password";
 import ResetPassword from "./pages/auth/reset-password";
 import Register from "./pages/auth/register";
+import CheckoutLayout from "./pages/checkout/layout";
+import CheckoutPage from "./pages/checkout";
 
 export default function AppRoutes() {
   return (
@@ -31,8 +33,11 @@ export default function AppRoutes() {
             </Route>
           </Route>
 
-          <Route path="cart" element={<CartPage />} />
-          <Route path="checkout" element={<CartPage />} />
+          <Route element={<CheckoutLayout />}>
+            <Route path="cart" element={<CartPage />} />
+          </Route>
+
+          <Route path="checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

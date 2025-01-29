@@ -33,12 +33,15 @@ export function Input({
       name={name}
       render={({ field: { onBlur, onChange, value }, fieldState: { error } }) => (
         <FormItem className={cn("w-full space-y-0 form-field", error ? 'error' : '')}>
-          <FormLabel className="mb-1 inline-block">{label}</FormLabel>
+          {
+            label && <FormLabel className="mb-1 inline-block">{label}</FormLabel>
+          }
+          
           <FormControl className="relative">
             <>
               <FormInput
                 placeholder={placeholder}
-                className={cn("input", className)}
+                className={cn("h-12 py-3.5", className)}
                 onChange={onChange}
                 onBlur={onBlur}
                 value={value}

@@ -1,20 +1,23 @@
-import { TypographySm } from "../misc/typography";
-import { SelectOptions } from "@/types";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FormField } from "@/components/ui/form";
 import { useFormContext } from "react-hook-form";
+import { SelectOption } from "@/vite-env";
+import { TypographySm } from "../misc";
+import { cn } from "@/shared/lib/utils";
 
 
 
 export function RadioButtons({
   options,
   name,
-  className
+  className,
+  itemClassName,
 }: {
-  options: { label: string, value: string }[];
+  options: SelectOption[];
   name: string;
   className?: string;
+  itemClassName?: string;
 }) {
   const { control } = useFormContext();
 
@@ -27,10 +30,10 @@ export function RadioButtons({
           <RadioGroup value={value} className={className}>
             {
               options.map(({ label, value: optionValue }, index: number) => (
-                <div className="flex items-center space-x-2" key={index.toString()}>
+                <label className={cn("", itemClassName)} key={index.toString()}>
                   <RadioGroupItem value={value} id={`${name}-${index}`} checked={value === optionValue} onSelect={onChange} />
-                  <Label htmlFor={`${name}-${index}`}>{label}</Label>
-                </div>
+                  <TypographySm>{label}</TypographySm>
+                </label>
               ))
             }
           </RadioGroup>

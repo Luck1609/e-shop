@@ -19,3 +19,39 @@ body {
 .input {
   @apply h-12;
 }
+
+.drawer-cart-item {
+  @apply !grid-cols-8;
+
+  &>:nth-child(1) {
+    @apply col-span-3
+  }
+
+  &>:nth-child(2) {
+    @apply col-span-5 grid-cols-1;
+
+    &>:nth-child(1) {
+      @apply md:col-span-1 mb-1;
+
+      &>p {
+        @apply whitespace-nowrap text-ellipsis text-[15px] font-medium;
+      }
+    }
+
+    &>div {
+      @apply pl-3
+    }
+
+    &>p {
+      @apply text-left pl-3
+    }
+
+    &>:nth-child(3) {
+      @apply justify-start
+    }
+
+    &>:last-child {
+      @apply hidden;
+    }
+  }
+}
