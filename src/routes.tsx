@@ -11,6 +11,8 @@ import ResetPassword from "./pages/auth/reset-password";
 import Register from "./pages/auth/register";
 import CheckoutLayout from "./pages/checkout/layout";
 import CheckoutPage from "./pages/checkout";
+import Tracking from "./pages/tracking";
+import TrackingDetails from "./pages/tracking/details";
 
 export default function AppRoutes() {
   return (
@@ -37,6 +39,10 @@ export default function AppRoutes() {
             <Route path="cart" element={<CartPage />} />
           </Route>
 
+          <Route path="track-package">
+            <Route index element={<Tracking />} />
+            <Route path=":token" element={<TrackingDetails />} />
+          </Route>
           <Route path="checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>

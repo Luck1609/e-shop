@@ -14,3 +14,16 @@ type Drawer = {
 }
 
 type SelectOption = { label: ReactNode, value: string }
+
+
+type CartItem = {
+  id: string
+  name: string
+  price: number
+  image: string
+  sku_id: string
+  quantity: number
+  isChecked: boolean
+  discount: number
+  product_id: string
+}
