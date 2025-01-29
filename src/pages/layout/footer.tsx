@@ -28,22 +28,22 @@ export default function Footer() {
           <TypographyH6 className="text-left text-white mb-3 block">Quick links</TypographyH6>
           <ul className="space-y-4">
             <li className="">
-              <Link to="/">
+              <Link to="/about-us">
                 <TypographySm>About us</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/contact-us">
                 <TypographySm>Contact us</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/help/faq">
                 <TypographySm>FAQ</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/products">
                 <TypographySm>Products</TypographySm>
               </Link>
             </li>
@@ -54,17 +54,17 @@ export default function Footer() {
           <TypographyH6 className="text-left text-white mb-3 block">My account</TypographyH6>
           <ul className="space-y-4">
             <li className="">
-              <Link to="/">
+              <Link to="/profile">
                 <TypographySm>My acount</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/cart">
                 <TypographySm>Cart</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/wishlist">
                 <TypographySm>Wish list</TypographySm>
               </Link>
             </li>
@@ -75,22 +75,22 @@ export default function Footer() {
           <TypographyH6 className="text-left text-white mb-3 block">Help center</TypographyH6>
           <ul className="space-y-4">
             <li className="">
-              <Link to="/">
+              <Link to="/help/privacy-policy">
                 <TypographySm>Privacy policy</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/help/refund-policy">
                 <TypographySm>Refund policy</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/help/shipping-&-returns">
                 <TypographySm>Shipping & return</TypographySm>
               </Link>
             </li>
             <li className="">
-              <Link to="/">
+              <Link to="/help/terms-&-conditions">
                 <TypographySm>Terms & conditions</TypographySm>
               </Link>
             </li>

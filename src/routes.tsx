@@ -17,6 +17,8 @@ import UserLayout from "./pages/user/layout";
 import PurchaseHistory from "./pages/user/history";
 import AccountDetails from "./pages/user/account-details";
 import SecurityDetails from "./pages/user/security";
+import Help from "./pages/info";
+import { authLinks, helpLinks } from "./data";
 
 export default function AppRoutes() {
   return (
@@ -49,11 +51,16 @@ export default function AppRoutes() {
           </Route>
 
           <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="contact-us" element={<CheckoutPage />} />
 
-          <Route element={<UserLayout />}>
+          <Route element={<UserLayout links={authLinks} />}>
             <Route path="purchase-history" element={<PurchaseHistory />} />
             <Route path="profile" element={<AccountDetails />} />
             <Route path="security" element={<SecurityDetails />} />
+          </Route>
+
+          <Route path="help" element={<UserLayout links={helpLinks} />}>
+            <Route path=":info" element={<Help />} />
           </Route>
         </Route>
       </Routes>

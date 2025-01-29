@@ -27,3 +27,5 @@ type CartItem = {
   discount: number
   product_id: string
 }
+
+type TableIcon = ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>

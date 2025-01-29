@@ -82,7 +82,7 @@ export const HistoryCard = ({ order }: { order: Transaction }) => {
 
         {products.map(({ name, image, price, quantity }, index) => (
           <div className="grid grid-cols-6 lg:grid-cols-9 gap-3" key={index.toString()}>
-            <div className="col-span-2">
+            <div className="col-span-2 bg-slate-200 w-20 h-20 lg:w-24 lg:h-24 rounded-lg">
               <img src={String(image)} alt="" className="lg:h-28 mx-auto" />
             </div>
 

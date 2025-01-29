@@ -5,6 +5,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useDispatch } from "@/shared/feature/hooks";
 import { toggleDrawer } from "@/shared/feature/reducers/misc";
 import { cn } from "@/shared/lib/utils";
+import { Drawer } from "@/vite-env";
 import { IconHeart, IconLogin, IconMenu3, IconSearch, IconUser, IconUserEdit } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
 
