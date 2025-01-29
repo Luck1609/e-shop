@@ -1,4 +1,5 @@
 import { cn } from "@/shared/lib/utils"
+import { Children } from "@/vite-env"
 import { NavLink as Link } from "react-router-dom"
 
 export function NavLink({

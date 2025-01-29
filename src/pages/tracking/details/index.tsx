@@ -25,7 +25,7 @@ export default function TrackingDetails() {
   const [showForm, setShowForm] = useState(false)
 
   const toggleForm = () => setShowForm(!showForm)
-  const products = useMemo(() => JSON.parse(transaction.data), [transaction])
+  // const products = useMemo(() => JSON.parse(transaction.data), [transaction])
 
   if (!transaction) return (
     <Container className="flex items-center justify-center h-[80dvh]">

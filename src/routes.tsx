@@ -13,6 +13,10 @@ import CheckoutLayout from "./pages/checkout/layout";
 import CheckoutPage from "./pages/checkout";
 import Tracking from "./pages/tracking";
 import TrackingDetails from "./pages/tracking/details";
+import UserLayout from "./pages/user/layout";
+import PurchaseHistory from "./pages/user/history";
+import AccountDetails from "./pages/user/account-details";
+import SecurityDetails from "./pages/user/security";
 
 export default function AppRoutes() {
   return (
@@ -43,7 +47,14 @@ export default function AppRoutes() {
             <Route index element={<Tracking />} />
             <Route path=":token" element={<TrackingDetails />} />
           </Route>
+
           <Route path="checkout" element={<CheckoutPage />} />
+
+          <Route element={<UserLayout />}>
+            <Route path="purchase-history" element={<PurchaseHistory />} />
+            <Route path="profile" element={<AccountDetails />} />
+            <Route path="security" element={<SecurityDetails />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
