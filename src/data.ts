@@ -1,30 +1,30 @@
-import { IconContract, IconLocation, IconMoneybag, IconQuestionMark, IconSettings, IconShieldCheck, IconShoppingBag, IconTruckReturn, IconUser } from "@tabler/icons-react";
+import {  IconCreditCardRefund, IconGavel, IconHelpCircle, IconLocation, IconSettings, IconShieldCheck, IconShoppingBag, IconSpyOff, IconTruckReturn, IconUser } from "@tabler/icons-react";
 
 export const helpLinks = [
   {
     label: "FAQ",
     url: "/help/faq",
-    icon: IconQuestionMark
+    icon: IconHelpCircle
   },
   {
     label: "Privacy Policy",
     url: "/help/privacy-policy",
-    icon: IconMoneybag
+    icon: IconSpyOff
   },
   {
     label: "Refund Policy",
     url: "/help/refund-policy",
-    icon: IconMoneybag
+    icon: IconCreditCardRefund
   },
   {
-    label: "Returns and Refunds",
+    label: "Returns & Refunds",
     url: "/help/shipping-&-refund",
     icon: IconTruckReturn
   },
   {
     label: "Terms & Conditions",
     url: "/help/terms-and-conditions",
-    icon: IconContract
+    icon: IconGavel
   },
   // {
   //   label: "How to buy",

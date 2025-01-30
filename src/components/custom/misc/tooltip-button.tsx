@@ -5,6 +5,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { Typography } from "./typography"
+import { Children } from "@/vite-env"
 
 export function TooltipButton({
   children,

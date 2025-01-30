@@ -8,6 +8,7 @@ import { cn } from "@/shared/lib/utils";
 import { Drawer } from "@/vite-env";
 import { IconHeart, IconLogin, IconMenu3, IconSearch, IconUser, IconUserEdit } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
+import NavSearch from "./search";
 
 
 export default function Nav() {
@@ -18,9 +19,9 @@ export default function Nav() {
 
   const toggleShoppingCart = () => {
     dispatch(toggleDrawer({
-    title: "Shopping cart",
-    description: "All of your items that are ready for checkout",
-    component: "cart"
+      title: "Shopping cart",
+      description: "All of your items that are ready for checkout",
+      component: "cart"
     } as Drawer))
   }
 
@@ -47,14 +48,14 @@ export default function Nav() {
 
           <ul className="flex space-x-1">
             <li className="">
-              <Button size="icon" variant="ghost">
-                <IconSearch className="w-5 h-5" />
-              </Button>
+              <NavSearch />
             </li>
             <li className="">
-              <Button size="icon" variant="ghost">
-                <IconHeart className="w-5 h-5" />
-              </Button>
+              <Link to="wishlist">
+                <Button size="icon" variant="ghost">
+                  <IconHeart className="w-5 h-5" />
+                </Button>
+              </Link>
             </li>
             {
               pathname !== "/cart" && (

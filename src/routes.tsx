@@ -19,6 +19,9 @@ import AccountDetails from "./pages/user/account-details";
 import SecurityDetails from "./pages/user/security";
 import Help from "./pages/info";
 import { authLinks, helpLinks } from "./data";
+import Contact from "./pages/contact";
+import About from "./pages/about";
+import Wishlist from "./pages/wishlist";
 
 export default function AppRoutes() {
   return (
@@ -50,9 +53,6 @@ export default function AppRoutes() {
             <Route path=":token" element={<TrackingDetails />} />
           </Route>
 
-          <Route path="checkout" element={<CheckoutPage />} />
-          <Route path="contact-us" element={<CheckoutPage />} />
-
           <Route element={<UserLayout links={authLinks} />}>
             <Route path="purchase-history" element={<PurchaseHistory />} />
             <Route path="profile" element={<AccountDetails />} />
@@ -62,6 +62,12 @@ export default function AppRoutes() {
           <Route path="help" element={<UserLayout links={helpLinks} />}>
             <Route path=":info" element={<Help />} />
           </Route>
+
+          {/* Other links */}
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="contact-us" element={<Contact />} />
+          <Route path="about-us" element={<About />} />
+          <Route path="wishlist" element={<Wishlist />} />
         </Route>
       </Routes>
     </BrowserRouter>
