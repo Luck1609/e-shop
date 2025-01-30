@@ -13,7 +13,7 @@ import { capitalize } from "lodash";
 import { useMemo } from "react";
 
 
-export default function Title({ className, title }: { className?: string, title: string }) {
+export function Title({ className, title }: { className?: string, title: string }) {
   const { pathname } = useLocation()
 
   const links = useMemo(() => {
@@ -39,10 +39,8 @@ export default function Title({ className, title }: { className?: string, title:
     }, [])
   }, [pathname])
 
-  console.log("Breadcrumb links", links)
-
   return (
-    <section className={cn("py-5 lg:py-20", className)}>
+    <section className={cn("py-5 lg:py-14", className)}>
       <TypographyH3>{title ?? "Title here"}</TypographyH3>
 
       <Breadcrumb className="py-1 lg:py-3">
