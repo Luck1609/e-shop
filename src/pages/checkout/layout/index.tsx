@@ -1,5 +1,4 @@
-import { Container } from "@/components/custom/misc";
-import Title from "@/components/custom/misc/title";
+import { Container, Title } from "@/components/custom/misc";
 import Info from "./info";
 import { Outlet, useLocation } from "react-router-dom";
 
@@ -18,7 +17,6 @@ export default function CheckoutLayout() {
   const { pathname } = useLocation()
 
   const location = pathname.split('/').pop()
-  console.log("layout pathname", location)
   
   const { title, className } = titles[location as keyof typeof titles]
 

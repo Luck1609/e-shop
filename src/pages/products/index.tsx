@@ -1,14 +1,12 @@
 import { useMemo } from "react";
-import { Container } from "@/components/custom/misc";
+import { Container, Title } from "@/components/custom/misc";
 import ProductCard from "./card";
-import Title from "@/components/custom/misc/title";
 import { useParams } from "react-router-dom";
 import { capitalize } from "lodash";
 
 export default function ProductListing() {
   const { collection } = useParams()
 
-  console.log("url params", collection)
   const title = useMemo(() => {
     if (collection) {
       const titleArray = collection.split("-")
