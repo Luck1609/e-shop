@@ -29,3 +29,14 @@ type CartItem = {
 }
 
 type TableIcon = ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>
+
+
+export type ShadcnAccordion = { title: ReactNode, content: ReactNode }
+
+
+export type Image = {
+  name: string
+  type: string
+  size: string
+  url: string
+}

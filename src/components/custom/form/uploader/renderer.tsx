@@ -1,29 +1,15 @@
-import { ChangeEvent, useEffect, useRef } from "react"
+import { ChangeEvent, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/shared/lib/utils"
 import { TooltipButton } from "../../misc/tooltip-button"
-import { Image } from "@/types"
 import { FieldErrors, useFieldArray, useFormContext } from "react-hook-form"
 import { IconFileTypeDoc, IconPhotoCheck, IconPhotoPlus, IconUpload, IconX } from "@tabler/icons-react"
 import { TypographySm } from "../../misc"
+import { Image } from "@/vite-env"
 
 
 
-const setThumbnail = (thumbnailIndex: number, images: File[]) => {
-  const thumbnail = images[thumbnailIndex]
-  const firstImage = images[0]
 
-
-  // images.flatMap((image, index) => {
-  //   if (index === 0) return thumbnail
-  //   else if (index === thumbnailIndex)
-  // })
-  // images.splice()
-}
-
-type sds = {
-  message: string
-}
 
 export default function Renderer({
   file,
@@ -36,7 +22,7 @@ export default function Renderer({
   name: string
   className?: string
 }) {
-  const { setValue, watch, clearErrors, trigger, formState: { errors },  } = useFormContext(),
+  const { setValue, watch, formState: { errors },  } = useFormContext(),
     ref = useRef<HTMLInputElement | null>(null)
 
   const thumbnailId = watch("thumbnail_index")
@@ -135,7 +121,7 @@ export default function Renderer({
         {thumbnailId - 1 === index ? (
           <TooltipButton label="Default thumbnail">
             <Button
-              variant="outline-secondary"
+              variant="secondary"
               className="inline-flex !py-0.5 px-2 text-xs absolute bottom-1 right-1 space-x-1"
               type="button"
             >

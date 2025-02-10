@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import image from "@/assets/svg/login.svg"
-import { TooltipButton, Typography, TypographyH5, TypographySm } from "@/components/custom/misc";
+import { TooltipButton, TypographyH5, TypographySm } from "@/components/custom/misc";
 import { Link } from "react-router-dom";
 import { IconBrandFacebook, IconBrandGoogle, IconBrandX } from "@tabler/icons-react";
 

@@ -1,6 +1,6 @@
 import { Typography } from "@/components/custom/misc";
 import { Icon } from "@tabler/icons-react";
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 
 
 export default function EmptyContent({ message, icon: Icon }: { message: ReactNode, icon: Icon }) {

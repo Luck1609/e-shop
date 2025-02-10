@@ -4,8 +4,8 @@ import { TypographySm } from '../../misc'
 import { useRef } from "react"
 import { ReactNode } from "react"
 import Renderer from './renderer'
-import { Image } from '@/types'
 import { cn } from '@/shared/lib/utils'
+import { Image } from '@/vite-env'
 
 export type UploaderProps = {
   name: string

@@ -1,3 +1,4 @@
+import { Drawer, HttpMethods } from "@/vite-env";
 import {PayloadAction, createSlice} from "@reduxjs/toolkit";
 
 export type Notice = {

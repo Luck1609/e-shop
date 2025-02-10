@@ -1,12 +1,6 @@
 import Counter from "./counter";
-import { CartItem } from ".";
 import { TypographyLead } from "@/components/custom/misc";
-import { cn, extractCheckedItems, sanitizeHtml } from "@/shared/lib/utils";
-import { IconTrash } from "@tabler/icons-react";
-import { useDispatch, useSelector } from "@/shared/feature/hooks";
-import { Link } from "@inertiajs/react";
-import { removeCheckedItems } from "@/shared/feature/reducers/checkout";
-import { Button } from "@/components/ui/button";
+import { CartItem } from "@/vite-env";
 
 export type CartCardProps = {
   className?: string
@@ -18,15 +12,15 @@ export type CartCardProps = {
 
 export default function CartCard({
   data,
-  index,
+  // index,
   className,
   showCounter = true
 }: CartCardProps) {
-  const { cart } = useSelector(state => state.checkout)
-  const checkedItems = extractCheckedItems(cart)
-  const dispatch = useDispatch()
+  // const { cart } = useSelector(state => state.checkout)
+  // const checkedItems = extractCheckedItems(cart)
+  // const dispatch = useDispatch()
 
-  const clearCheckedItems = () => dispatch(removeCheckedItems())
+  // const clearCheckedItems = () => dispatch(removeCheckedItems())
 
   return (
     <div
@@ -43,7 +37,7 @@ export default function CartCard({
             {data?.name}
           </TypographyLead>
 
-          <div className={cn("flex items-center mt-1 lg:mt-0 ", checkedItems.length === 0 ? "lg:space-x-3" : "")}>
+          {/* <div className={cn("flex items-center mt-1 lg:mt-0 ", checkedItems.length === 0 ? "lg:space-x-3" : "")}>
             <TypographyLead className="">
               GH¢ {data?.price}
             </TypographyLead>
@@ -57,7 +51,7 @@ export default function CartCard({
                 </Button>
               )
             }
-          </div>
+          </div> */}
         </div>
 
         <div className="flex items-center justify-between w-full">
@@ -66,7 +60,7 @@ export default function CartCard({
           </span>
 
           {
-            showCounter && <Counter data={data} index={index} />
+            showCounter && <Counter data={data} />
           }
         </div>
       </div>

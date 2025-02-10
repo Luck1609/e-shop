@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { cn } from "@/shared/lib/utils";
 import { TypographyH3 } from "./typography";
 import {
@@ -9,35 +8,32 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { capitalize } from "lodash";
-import { useMemo } from "react";
 
 
 export function Title({ className, title }: { className?: string, title: string }) {
-  const { pathname } = useLocation()
 
-  const links = useMemo(() => {
-    const pathnameSplit = pathname.split("/")
-    return pathnameSplit.reduce((names: { label: string, url: string }[], name: string, index: number) => {
-      let url
-        // `${())
-        // ? `${names[index - 1].url}/${name}`
-        // : ""}`
+  // const links = useMemo(() => {
+  //   const pathnameSplit = pathname.split("/")
+  //   return pathnameSplit.reduce((names: { label: string, url: string }[], name: string, index: number) => {
+  //     let url
+  //       // `${())
+  //       // ? `${names[index - 1].url}/${name}`
+  //       // : ""}`
       
-      // if (index > 0 || (index + 1 === pathnameSplit.length)) url = 
-      // const url = `${names[1]}${(index > 0 || (index + 1 === links.length)) ? "/" : ""}`
+  //     // if (index > 0 || (index + 1 === pathnameSplit.length)) url = 
+  //     // const url = `${names[1]}${(index > 0 || (index + 1 === links.length)) ? "/" : ""}`
 
-      console.log("Current url =>", url)
+  //     console.log("Current url =>", url)
       
-      return [
-        ...names,
-        {
-          label: index === 0 ? "Home" : capitalize(name.split("-").join(" ")),
-          url: `${names[index - 1]?.url}/${name}`
-        }
-      ]
-    }, [])
-  }, [pathname])
+  //     return [
+  //       ...names,
+  //       {
+  //         label: index === 0 ? "Home" : capitalize(name.split("-").join(" ")),
+  //         url: `${names[index - 1]?.url}/${name}`
+  //       }
+  //     ]
+  //   }, [])
+  // }, [pathname])
 
   return (
     <section className={cn("py-5 lg:py-14", className)}>

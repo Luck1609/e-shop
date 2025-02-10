@@ -5,6 +5,7 @@ import { Notice, toggleNoticeModal } from "@/shared/feature/reducers/misc";
 import { addDays, addMonths, format, isAfter } from "date-fns";
 import { Link } from "react-router-dom";
 import { CartItem } from "@/vite-env";
+import { TrackingDetails } from "@/pages/tracking/details/steps";
 
 
 
@@ -32,7 +33,7 @@ export type HistoryCard = {
 
 export const HistoryCard = ({ order }: { order: Transaction }) => {
   const dispatch = useDispatch();
-  const { reference, amount, data, tracking_details: { cleared_on, delivered_on, shipped_on, eta } } = order
+  const { reference, amount, data, tracking_details: { delivered_on, eta } } = order
 
   const deliveryConfirmation = () =>
     dispatch(
