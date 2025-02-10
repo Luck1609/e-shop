@@ -16,6 +16,7 @@ export default {
 				dark: "#131920",
 			},
 			backgroundImage: {
+				hero: "url('/img/hero.webp')",
 				background: "url('/svg/background.svg')"
 			}
   	}
