@@ -18,12 +18,7 @@ export default function Contact() {
 
               <div className="space-y-2">
                 <div className="pl-5">
-                  <Typography className="font-semibold">USA</Typography>
-                  <TypographySm className="">3704 N Tillotson Ave, Apt 436 Muncie, Indiana 47304, USA</TypographySm>
-                </div>
-                <div className="pl-5">
-                  <Typography className="font-semibold">Ghana</Typography>
-                  <TypographySm className="">Opp. Iron birds Company Ltd, Anloga Junction, Off Aboabo Road, Kumasi</TypographySm>
+                  <TypographySm className="">Random address, block 16, Lucky street</TypographySm>
                 </div>
               </div>
             </div>
@@ -36,15 +31,13 @@ export default function Contact() {
 
               <div className="space-y-2">
                 <div className="flex items-center space-x-3 pl-5">
-                  <TypographySm className="font-semibold">USA</TypographySm>
                   <a href="tel:+13126196187" className="inline-block">
-                    <TypographySm className="">+1 (312) 619 6187</TypographySm>
+                    <TypographySm className="">+233 (24) 914 9420</TypographySm>
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 pl-5">
-                  <TypographySm className="font-semibold">Ghana</TypographySm>
                   <a href="tel:+13126196187" className="inline-block">
-                    <TypographySm className="">+233 (53) 938 1177</TypographySm>
+                    <TypographySm className="">+233 (50) 389 4555</TypographySm>
                   </a>
                 </div>
               </div>
@@ -56,8 +49,8 @@ export default function Contact() {
                 <span>Email address</span>
               </TypographyLead>
 
-              <a href="mailto:getstartresearch@gmail.com" className="inline-block">
-                <TypographySm className="pl-5">getstartresearch@gmail.com</TypographySm>
+              <a href="mailto:vc.mall@domain.com" className="inline-block">
+                <TypographySm className="pl-5">vc.mall@domain.com</TypographySm>
               </a>
             </div>
 
@@ -67,12 +60,12 @@ export default function Contact() {
                 <span>WhatsApp chat</span>
               </TypographyLead>
               <a
-                href="https://wa.me/+233539381177"
+                href="https://wa.me/+233503894555"
                 rel="noreferrer noopener"
                 target="_blank"
                 className="inline-block"
               >
-                <TypographySm className="pl-5">+233 (53) 938 1177</TypographySm>
+                <TypographySm className="pl-5">+233 (50) 389 4555</TypographySm>
               </a>
             </div>
 
