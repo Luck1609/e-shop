@@ -13,11 +13,11 @@
 
 
 body {
-  @apply text-color font-['Roboto']
+  @apply text-color font-['Roboto'];
 }
 
 .hero {
-  @apply relative after:bg-hero after:absolute after:bg-cover after:right-10 after:w-[450px] after:h-[600px] after:bottom-0 after:z-0
+  @apply relative after:bg-hero after:absolute after:bg-cover after:right-10 after:w-[450px] after:h-[600px] after:bottom-0 after:z-0;
 }
 
 .input {

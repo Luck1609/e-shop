@@ -31,11 +31,11 @@ export default function Sidenav() {
       <div className="py-2">
         <SheetFooter className="flex flex-row space-x-2 lg:space-x-2">
           <SheetClose className="w-2/4 lg:w-full">
-            <Button onClick={goto("/login")} className="w-full h-12 block p-3 bg-secondary text-white rounded-md hover:bg-secondary hover:bg-opacity-85">Login</Button>
+            <Button onClick={goto("/login")} variant="ghost" className="w-full h-12 block p-3 border border-secondary text-secondary rounded-md hover:text-secondary">Login</Button>
           </SheetClose>
 
           <SheetClose className="w-2/4 lg:w-full">
-            <Button onClick={goto("/register")} variant="ghost" className="w-full h-12 block p-3 border border-secondary text-secondary rounded-md hover:text-secondary">Register</Button>
+            <Button onClick={goto("/register")} className="w-full h-12 block p-3 bg-secondary text-white rounded-md hover:bg-secondary hover:bg-opacity-85">Register</Button>
           </SheetClose>
         </SheetFooter>
       </div>

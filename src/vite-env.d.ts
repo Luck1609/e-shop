@@ -41,3 +41,10 @@ export type Image = {
   size: string
   url: string
 }
+
+
+type PaginatedData = {
+  page: number
+  total: number
+  perPage: number
+}

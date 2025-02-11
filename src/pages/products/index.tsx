@@ -1,12 +1,16 @@
 import { useMemo } from "react";
-import { Container, Title } from "@/components/custom/misc";
+import { Container, Title, Pagination } from "@/components/custom/misc";
 import ProductCard from "./card";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { capitalize } from "lodash";
 import { products } from "@/shared/products"
 
 export default function ProductListing() {
   const { collection } = useParams()
+  const [params] = useSearchParams()
+  const page = Number.parseInt(params.get("page") ?? "1")
+  const perPage = 12
+
 
   const title = useMemo(() => {
     if (collection) {
@@ -16,11 +20,20 @@ export default function ProductListing() {
     }
   }, [collection])
 
-  console.log("Product list", products)
+
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (page - 1) * perPage
+
+    const paginated = products.slice(startIndex, startIndex + perPage)
+    
+    console.log("Paginate3d data", paginated, startIndex, startIndex + perPage, page)
+    return paginated
+  }, [page])
+
 
   return (
     <div>
-      <Container className="grid lg:grid-cols-4 gap-x-4 gap-y-8">
+      <Container className="grid lg:grid-cols-4 gap-x-4">
         <Title
           className="lg:col-span-4"
           title={title ?? "All Products"}
@@ -28,13 +41,19 @@ export default function ProductListing() {
 
         <section className="">
         </section>
-        <section className="lg:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8">
+        <section className="lg:col-span-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">
           {
-            products.map((product, index: number) => <ProductCard data={product} key={index.toString()} />)
+            paginatedProducts.map((product, index: number) => <ProductCard data={product} key={index.toString()} />)
           }
 
-          
         </section>
+          <div className="w-full flex justify-center lg:col-span-4 py-5">
+            <Pagination
+              page={page}
+              perPage={12}
+              total={products.length}
+            />
+          </div>
       </Container>
     </div>
   )

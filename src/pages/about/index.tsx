@@ -1,5 +1,5 @@
 
-import { Typography, TypographyH3, TypographyH4, TypographyLead } from "@/components/custom/misc/typography";
+import { Typography, TypographyH3, TypographyH4, TypographySm } from "@/components/custom/misc/typography";
 import { Container } from "@/components/custom/misc";
 import { Avatar } from "@/components/ui/avatar";
 import { IconBrandFacebook, IconBrandLinkedin, IconBrandX } from "@tabler/icons-react";
@@ -63,7 +63,7 @@ export default function About() {
       <div className="lg:col-span-3 py-8">
         <TypographyH3 className="text-center mb-10">Our Team</TypographyH3>
 
-        <article className="grid lg:grid-cols-5 gap-x-5 gap-y-16">
+        <article className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-8 lg:gap-y-16">
           {
             Array.from(Array(5).keys()).map((id: number) => <TeamCard key={id.toString()} />)
           }
@@ -77,11 +77,11 @@ export default function About() {
 const TeamCard = () => {
   return (
     <div className="flex flex-col justify-center items-center dark:bg-dark-card py-5 rounded-lg">
-      <Avatar className="h-44 w-44 bg-teal-500 mb-4" />
+      <Avatar className="w-32 h-32 md:h-44 md:w-44 bg-slate-100 mb-4" />
 
       <div className="text-center">
-        <TypographyLead>Members Name</TypographyLead>
-        <Typography>Member position</Typography>
+        <Typography>Members Name</Typography>
+        <TypographySm>Member position</TypographySm>
 
         <div className="flex space-x-4 mt-4 items-center justify-center">
           <a href="#" className="">

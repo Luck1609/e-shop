@@ -6,7 +6,7 @@ import { useDispatch } from "@/shared/feature/hooks";
 import { toggleDrawer } from "@/shared/feature/reducers/misc";
 import { cn } from "@/shared/lib/utils";
 import { Drawer } from "@/vite-env";
-import { IconHeart, IconLogin, IconMenu3, IconUser, IconUserEdit } from "@tabler/icons-react";
+import { IconLogin, IconMenu3, IconUser, IconUserEdit } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
 import NavSearch from "./search";
 import { links } from "./data";
@@ -38,7 +38,7 @@ export default function Nav() {
 
   return (
     <div className={cn("", isHome ? "lg:p-5" : "bg-white")}>
-      <Container className={cn("w-full relative z-10", isHome ? " bg-white rounded-lg" : "")}>
+      <Container className={cn("w-full relative z-10 p-0", isHome ? " bg-white rounded-lg" : "")}>
         <nav className={cn("flex justify-between items-center  p-3", isHome ? "" : "")}>
           <Logo />
 
@@ -72,7 +72,7 @@ export default function Nav() {
                 </li>
               )
             }
-            <li className="">
+            <li className="hidden md:block">
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <div className="w-10 h-10 flex items-center justify-center">

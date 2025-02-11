@@ -20,11 +20,11 @@ export type ProductData = {
 export default function ProductCard({ data }: { data?: ProductData }) {
   return (
     <Link to={`/products/${data?.category.toLowerCase()}/${data?.slug.replace(" ", "-")}`} className="">
-      <div className="w-full h-[400px] bg-slate-100 rounded-lg overflow-hidden mb-2">
+      <div className="w-full h-[255px] md:h-[313px] lg:h-[400px] bg-[#ECEAE8] rounded-lg overflow-hidden mb-2">
         <img src={data ? generateProductImage(data) : ""} alt="" className="" />
       </div>
 
-      <div className="space-y-2.5 px-2">
+      <div className="space-y-1 lg:space-y-2.5 px-2">
         <Rate rate={data?.rating ?? 0} className="h-3.5 w-3.5 space-x-0 fill-slate-300 stroke-slate-300" />
         <TypographyH6 className="leading-0 text-ellipsis">{data?.name.replace("-", "") ?? "Product name"}</TypographyH6>
         <Typography>${data?.price ?? "30"}</Typography>

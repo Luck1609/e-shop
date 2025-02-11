@@ -23,7 +23,7 @@ export function TypographyH2({ children, className }: IProps) {
   return (
     <h2
       className={cn(
-        "pb-2 text-34xl lg:text-4xl font-semibold first:mt-0 dark:text-dark-text",
+        "text-3xl lg:text-4xl font-semibold first:mt-0 dark:text-dark-text",
         className
       )}
     >
