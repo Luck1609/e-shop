@@ -11,6 +11,7 @@ type Drawer = {
   title: string
   description: string
   component: string
+  direction: 'left' | 'right' | 'top' | 'bottom'
 }
 
 type SelectOption = { label: ReactNode, value: string }

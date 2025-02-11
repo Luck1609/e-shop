@@ -1,4 +1,5 @@
 import fs from "fs";
+import _ from "lodash";
 import path from "path";
 import {fileURLToPath} from "url";
 
@@ -36,7 +37,66 @@ const imagesList = getImagesBySubdirectory(productsFolder);
 const men = getImagesBySubdirectory(menFolder);
 const women = getImagesBySubdirectory(womenFolder);
 
-const imageCollection = {...imagesList, ...men, ...women}
+
+
+const menCollection = Object.entries(men).reduce((products, [key, values]) => (
+    [
+        ...products,
+        {
+            name: _.upperFirst(key),
+            category: "Men", // Men, Women, Children, accessories
+            price: Number.parseFloat(_.random(5.0, 199.99).toFixed(2)),
+            currency: "USD",
+            rating: Number.parseInt(_.random(0, 5)),
+            isFeatured: Number.parseInt(_.random(0, 1)),
+            isPopular: Number.parseInt(_.random(0, 1)),
+            description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit molestiae, totam perspiciatis a unde alias animi expedita asperiores itaque ullam sed vel rerum quisquam eum in sit! Adipisci, dolores nulla",
+            images: values,
+            slug: _.lowerCase(_.replace(key, " ", "-")),
+            swatches: []
+        }
+    ]
+), [])
+
+const womenCollection = Object.entries(women).reduce((products, [key, values]) => (
+    [
+        ...products,
+        {
+            name: _.upperFirst(key),
+            category: "Women", // Men, Women, Children, accessories
+            price: Number.parseFloat(_.random(5.0, 199.99).toFixed(2)),
+            currency: "USD",
+            rating: Number.parseInt(_.random(0, 5)),
+            isFeatured: Number.parseInt(_.random(0, 1)),
+            isPopular: Number.parseInt(_.random(0, 1)),
+            description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit molestiae, totam perspiciatis a unde alias animi expedita asperiores itaque ullam sed vel rerum quisquam eum in sit! Adipisci, dolores nulla",
+            images: values,
+            slug: _.lowerCase(_.replace(key, " ", "-")),
+            swatches: []
+        }
+    ]
+), [])
+
+const accessoriesCollection = Object.entries(imagesList).reduce((products, [key, values]) => (
+    [
+        ...products,
+        {
+            name: _.upperFirst(key.replace("-", " ")),
+            category: "Accessories", // Men, Women, Children, accessories
+            price: Number.parseFloat(_.random(5.0, 199.99).toFixed(2)),
+            currency: "USD",
+            rating: Number.parseInt(_.random(0, 5)),
+            isFeatured: Number.parseInt(_.random(0, 1)),
+            isPopular: Number.parseInt(_.random(0, 1)),
+            description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit molestiae, totam perspiciatis a unde alias animi expedita asperiores itaque ullam sed vel rerum quisquam eum in sit! Adipisci, dolores nulla",
+            images: values,
+            slug: _.lowerCase(_.replace(key, " ", "-")),
+            swatches: []
+        }
+    ]
+), [])
+
+const imageCollection = [...menCollection, ...womenCollection, ...accessoriesCollection]
 
 fs.writeFileSync(outputFile, JSON.stringify(imageCollection, null, 2));
 

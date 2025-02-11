@@ -25,7 +25,7 @@ export function Drawer() {
 
   return (
     <Sheet open={drawer !== null} onOpenChange={close}>
-      <SheetContent className="py-4 px-1">
+      <SheetContent className="py-4 px-1" side={drawer?.direction}>
         <SheetHeader>
           <SheetTitle>{ drawer?.title }</SheetTitle>
         </SheetHeader>

@@ -9,6 +9,7 @@ import { Drawer } from "@/vite-env";
 import { IconHeart, IconLogin, IconMenu3, IconUser, IconUserEdit } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
 import NavSearch from "./search";
+import { links } from "./data";
 
 
 export default function Nav() {
@@ -21,7 +22,17 @@ export default function Nav() {
     dispatch(toggleDrawer({
       title: "Shopping cart",
       description: "All of your items that are ready for checkout",
-      component: "cart"
+      component: "cart",
+      direction: "right"
+    } as Drawer))
+  }
+
+  const toggleMenu = () => {
+    dispatch(toggleDrawer({
+      title: "Menu",
+      description: "",
+      component: "menu",
+      direction: "left"
     } as Drawer))
   }
 
@@ -32,31 +43,26 @@ export default function Nav() {
           <Logo />
 
           <ul className="hidden lg:flex">
-            <li className="">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li className="">
-              <NavLink to="/categories">Categories</NavLink>
-            </li>
-            <li className="">
-              <NavLink to="/products">Products</NavLink>
-            </li>
-            <li className="">
-              <NavLink to="/track-package">Track Package</NavLink>
-            </li>
+            {
+              links.map(({ url, name }) => (
+                <li className="" key={url}>
+                  <NavLink to={url}>{name}</NavLink>
+                </li>
+              ))
+            }
           </ul>
 
           <ul className="flex space-x-1">
             <li className="">
               <NavSearch />
             </li>
-            <li className="">
+            {/* <li className="">
               <Link to="wishlist">
                 <Button size="icon" variant="ghost">
                   <IconHeart className="w-5 h-5" />
                 </Button>
               </Link>
-            </li>
+            </li> */}
             {
               pathname !== "/cart" && (
                 <li className="">
@@ -69,9 +75,9 @@ export default function Nav() {
             <li className="">
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <Button size="icon" variant="ghost">
+                  <div className="w-10 h-10 flex items-center justify-center">
                     <IconUser className="w-5 h-5" />
-                  </Button>
+                  </div>
                 </DropdownMenuTrigger>
 
                 <DropdownMenuContent>
@@ -91,7 +97,7 @@ export default function Nav() {
               </DropdownMenu>
             </li>
             <li className="block lg:hidden">
-              <Button size="icon" variant="ghost">
+              <Button size="icon" variant="ghost" onClick={toggleMenu}>
                 <IconMenu3 className="w-5 h-5" />
               </Button>
             </li>

@@ -1,8 +1,13 @@
 import { Container, Typography, TypographyH3 } from "@/components/custom/misc";
 import ProductCard from "../products/card";
+import { products } from "@/shared/products";
 
+const featured = products.filter(({ isFeatured }) => isFeatured)
 
 export default function Featured() {
+  
+  console.log("Featured length", products.length)
+
   return (
     <article className="py-16">
       <Container>
@@ -13,8 +18,8 @@ export default function Featured() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8">
           {
-            Array.from(Array(8).keys()).map((id: number) => (
-              <ProductCard key={id.toString()} />
+            (featured.slice(0, 8)).map((product, index: number) => (
+              <ProductCard data={product} key={index.toString()} />
             ))
           }
         </div>

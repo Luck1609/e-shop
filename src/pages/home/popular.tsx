@@ -1,8 +1,13 @@
 import { Container, Typography, TypographyH3 } from "@/components/custom/misc";
 import ProductCard from "../products/card";
+import { products } from "@/shared/products";
 
+const popular = products.filter(({ isPopular }) => isPopular)
 
 export default function Popular() {
+  
+  console.log("Popular count", popular.length)
+
   return (
     <article className="bg-slate-200 py-20">
       <Container>
@@ -13,8 +18,8 @@ export default function Popular() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8">
           {
-            Array.from(Array(8).keys()).map((id: number) => (
-              <ProductCard key={id.toString()} />
+            (popular.slice(0, 8)).map((product, id: number) => (
+              <ProductCard data={product} key={id.toString()} />
             ))
           }
         </div>
